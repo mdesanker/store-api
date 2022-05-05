@@ -2,13 +2,14 @@ import app from "./app";
 import request from "supertest";
 import initializeTestServer from "../../utils/mongoTestConfig";
 import mongoose from "mongoose";
+import seedDB from "./seed";
 
 // GLOBAL VARIABLES
 
 // TEST SETUP
 beforeAll(async () => {
   await initializeTestServer();
-  // await seedDB();
+  await seedDB();
 });
 
 afterAll(() => {
