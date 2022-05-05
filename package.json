@@ -1,0 +1,19 @@
+{
+  "name": "store-api",
+  "version": "1.0.0",
+  "description": "API for ecommerce app",
+  "main": "app.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdesanker/store-api.git"
+  },
+  "author": "Michael Desanker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdesanker/store-api/issues"
+  },
+  "homepage": "https://github.com/mdesanker/store-api#readme"
+}
