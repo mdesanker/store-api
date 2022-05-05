@@ -4,7 +4,8 @@
   "description": "API for ecommerce app",
   "main": "app.ts",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon ./src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/mdesanker/store-api/issues"
   },
-  "homepage": "https://github.com/mdesanker/store-api#readme"
+  "homepage": "https://github.com/mdesanker/store-api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.31",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
 }
