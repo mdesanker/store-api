@@ -3,8 +3,11 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
+import connectDB from "./utils/mongoConfig";
 
 const app = express();
+
+connectDB();
 
 app.use(
   cors({
