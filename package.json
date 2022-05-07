@@ -4,7 +4,7 @@
   "description": "API for ecommerce app",
   "main": "app.ts",
   "scripts": {
-    "test": "NODE_ENV=test jest ./src/routes/__tests__/category.test.ts --testTimeout=10000 --detectOpenHandles --forceExit",
+    "test": "NODE_ENV=test jest ./src/routes/__tests__/auth.test.ts --testTimeout=10000 --detectOpenHandles --forceExit",
     "start": "nodemon ./src/app.ts"
   },
   "repository": {
