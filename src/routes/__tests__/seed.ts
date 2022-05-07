@@ -36,7 +36,7 @@ const seedDB = async () => {
     }
   }
 
-  console.log(categories);
+  // console.log(categories);
   return;
 };
 
