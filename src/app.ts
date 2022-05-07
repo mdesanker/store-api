@@ -5,6 +5,7 @@ import helmet from "helmet";
 import compression from "compression";
 import connectDB from "./utils/mongoConfig";
 
+import authRouter from "./routes/api/auth";
 import categoryRouter from "./routes/api/category";
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/category", categoryRouter);
+app.use("/auth", authRouter);
 
 const PORT = (process.env.PORT as string) || (process.env.DEV_PORT as string);
 
