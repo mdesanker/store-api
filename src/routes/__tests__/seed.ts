@@ -1,6 +1,20 @@
 import Category, { ICategory } from "../../models/Category";
+import User, { IUser } from "../../models/User";
 
+const users: any[] = [];
 const categories: any[] = [];
+
+// USERS
+const generateJane = () => {
+  const user = new User<IUser>({
+    username: "Jane",
+    email: "jane@gmail.com",
+    password: "$2a$10$uhA3ldfq9OOmF1xNu38g7Or4CisFNy5aTnHaXR.ntrJn9X/52NKxe",
+    isAdmin: true,
+  });
+
+  users.push(user);
+};
 
 // CATEGORIES
 const generateElectronics = () => {
@@ -25,8 +39,18 @@ const generateClothing = () => {
 
 // SEED DB
 const seedDB = async () => {
+  generateJane();
+
   generateElectronics();
   generateClothing();
+
+  for (let user of users) {
+    try {
+      await user.save();
+    } catch (err) {
+      err;
+    }
+  }
 
   for (let category of categories) {
     try {
@@ -36,6 +60,7 @@ const seedDB = async () => {
     }
   }
 
+  console.log(users);
   // console.log(categories);
   return;
 };
