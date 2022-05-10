@@ -73,8 +73,8 @@ describe("POST /auth/login", () => {
       password: "password",
     });
 
-    expect(res.statusCode).toEqual(401);
-    expect(res.body.errors[0].msg).toEqual("Invalid credentials");
+    expect(res.statusCode).toEqual(422);
+    expect(res.body.errors[0].msg).toEqual("Email is required");
   });
 
   it("return error for invalid credentials", async () => {
