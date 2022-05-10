@@ -54,3 +54,36 @@ describe("POST /auth/regsiter", () => {
     expect(res.body.errors[0].msg).toEqual("Email already in use");
   });
 });
+
+// LOGIN ROUTES
+describe("POST /auth/login", () => {
+  it("return token for successful login", async () => {
+    const res = await request(app).post("/auth/register").send({
+      email: "jane@gmail.com",
+      password: "password",
+    });
+
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toHaveProperty("token");
+  });
+
+  it("return error for missing field", async () => {
+    const res = await request(app).post("/auth/register").send({
+      email: "",
+      password: "password",
+    });
+
+    expect(res.statusCode).toEqual(401);
+    expect(res.body.errors[0].msg).toEqual("Invalid credentials");
+  });
+
+  it("return error for invalid credentials", async () => {
+    const res = await request(app).post("/auth/register").send({
+      email: "jane@gmail.com",
+      password: "password1",
+    });
+
+    expect(res.statusCode).toEqual(401);
+    expect(res.body.errors[0].msg).toEqual("Invalid credentials");
+  });
+});
