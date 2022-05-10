@@ -5,6 +5,6 @@ import validation from "../../middleware/validation";
 const auth = Router();
 
 auth.post("/register", validation.registerUser, authController.register);
-auth.post("/login");
+auth.post("/login", validation.loginUser, authController.login);
 
 export = auth;
