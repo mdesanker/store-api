@@ -58,7 +58,7 @@ describe("POST /auth/regsiter", () => {
 // LOGIN ROUTES
 describe("POST /auth/login", () => {
   it("return token for successful login", async () => {
-    const res = await request(app).post("/auth/register").send({
+    const res = await request(app).post("/auth/login").send({
       email: "jane@gmail.com",
       password: "password",
     });
@@ -68,7 +68,7 @@ describe("POST /auth/login", () => {
   });
 
   it("return error for missing field", async () => {
-    const res = await request(app).post("/auth/register").send({
+    const res = await request(app).post("/auth/login").send({
       email: "",
       password: "password",
     });
@@ -78,7 +78,7 @@ describe("POST /auth/login", () => {
   });
 
   it("return error for invalid credentials", async () => {
-    const res = await request(app).post("/auth/register").send({
+    const res = await request(app).post("/auth/login").send({
       email: "jane@gmail.com",
       password: "password1",
     });
